@@ -8,7 +8,7 @@
 }
 /* Define styles for the website logo */
 .website-logo {
-  margin-top: 30px;
+  margin-top: 22px;
   width: 210px; /* Adjust the width to your desired size */
   height: auto; /* Maintain aspect ratio */
 }
@@ -16,6 +16,7 @@
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
   .website-logo {
+    margin-top: 10px;
     max-width: 200px; /* Adjust width for smaller screens */
   }
 }
@@ -23,6 +24,7 @@
 /* Media query for even smaller screens */
 @media screen and (max-width: 480px) {
   .website-logo {
+    margin-top: 10px;
     max-width: 150px; /* Further adjust width for very small screens */
   }
 }

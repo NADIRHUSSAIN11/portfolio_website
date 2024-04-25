@@ -101,3 +101,12 @@
     text-align: justify;
   }
 }
+@media screen and (max-width: 411px) {
+  article {
+    display: flex;
+    flex-direction: row;
+  }
+  article > div {
+    margin-right: 10px;
+  }
+}

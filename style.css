@@ -381,7 +381,6 @@ article .icon {
 }
 
 /* PROJECTS SECTION */
-/* PROJECTS SECTION */
 #projects {
   position: relative;
 }
@@ -447,7 +446,7 @@ article .icon {
 }
 
 .contact-info-container p {
-  font-size: larger;
+  font-size: large;
 }
 
 .contact-icon {

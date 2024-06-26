@@ -32,6 +32,185 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+     
+        .section__text__p2 {
+            animation: changeTitle 3s linear infinite; 
+        }
+
+        @keyframes changeTitle {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+        .section__text {
+            padding: 20px;
+        }
+
+        .title {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .section__text__p1 {
+            font-size: 1.2em;
+        }
+
+        .section__text__p2 {
+            animation: changeTitle 8s linear infinite;
+            font-size: 1.5em;
+        }
+
+        @keyframes changeTitle {
+            0%, 100% { opacity: 0; }
+            10%, 90% { opacity: 1; }
+        }
+
+        .icon {
+            width: 40px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .certification-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+            height: auto;
+            width: 80%;
+            border:rgb(144, 144, 144) 0.1rem solid;
+            border-radius: 30px;
+            padding-bottom: 40px;
+          
+        }
+        .ach-badge-container img {
+            height: 150px;
+            margin: 0 15px;
+            margin-top: 50px;
+           
+        } 
+
+        .ach-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    width: 80%;
+    border: rgb(144, 144, 144) 0.1rem solid;
+    border-radius: 30px;
+    padding-bottom: 40px;
+}
+
+.ach-section::before,
+.ach-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px; 
+    background: linear-gradient(to right, white, transparent);
+    z-index: 1;
+}
+.ach-section::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+.ach-section::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+
+/* New Section */
+.certification-section {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    width: 80%;
+    border: rgb(144, 144, 144) 0.1rem solid;
+    border-radius: 30px;
+    padding-bottom: 40px;
+}
+.certification-section::before,
+.certification-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px; 
+    background: linear-gradient(to right, white, transparent);
+    z-index: 1;
+}
+.certification-section::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+.certification-section::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+.badge-container {
+    display: flex;
+    white-space: nowrap;
+    animation: ach-scroll 35s linear infinite;
+    position: relative; /* Ensure it stays below the fade overlays */
+}
+/**/
+.ach-badge-container {
+    display: flex;
+    white-space: nowrap;
+    animation: ach-scroll 30s linear infinite;
+    position: relative; /* Ensure it stays below the fade overlays */
+}
+
+@keyframes ach-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+        @keyframes ach-scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }   
+
+        .badge-container {
+            display: flex;
+            white-space: nowrap;
+            animation: scroll 35s linear infinite;
+           
+        }
+
+        .badge-container img {
+            height: 150px;
+            margin: 0 15px;
+            margin-top: 50px;
+           
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-220%);
+            }
+        }   
+  </style>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -44,6 +223,8 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#certification">Certification</a></li>
+          <li><a href="#ach">Achievements</a></li>
         </ul>
       </div>
     </nav>
@@ -62,6 +243,8 @@
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <li><a href="#certification" onclick="toggleMenu()">Certifications</a></li>
+          <li><a href="#ach" onclick="toggleMenu()">Acheivement</a></li>
         </div>
       </div>
     </nav>
@@ -69,60 +252,37 @@
       <div class="section__pic-container">
         <img src="./assets/newdp.webp" alt="Nadir Hussain profile picture" />
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1
-          class="title animate__animated animate__jackInTheBox animate__repeat-3 animate__delay-2s"
-        >
-          Nadir Hussain
-        </h1>
 
-        <p class="section__text__p2">Data Engineer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/NADIR-HUSSAIN-RESUME.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.webp"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="window.open('https://www.linkedin.com/in/nadir-hussain-/')"
-          />
-          <img
-            src="./assets/github.webp"
-            alt="My Github profile"
-            class="icon"
-            onclick="window.open('https://github.com/NADIRHUSSAIN11')"
-          />
-          <img
-            src="./assets/leetcode.webp"
-            alt="My leetcode profile"
-            class="icon"
-            onclick="window.open('https://leetcode.com/u/Nadir_Hussain1/')"
-          />
-          <img
-            src="./assets/hacker.webp"
-            alt="My hackerrank profile"
-            class="icon"
-            onclick="window.open('https://www.hackerrank.com/profile/nadirarain111')"
-          />
-          <img
-            src="./assets/medium.webp"
-            alt="My medium profile"
-            class="icon"
-            onclick="window.open('https://medium.com/@nadirhussainarain')"
-          />
-        </div>
-      </div>
+<div class="section__text">
+  <p class="section__text__p1">Hello, I'm</p>
+  <h1 class="title animate__animated animate__jackInTheBox animate__repeat-3 animate__delay-2s">
+      Nadir Hussain
+  </h1>
+  <p class="section__text__p2">Data Engineer</p>
+  <div class="btn-container">
+      <button class="btn btn-color-2" onclick="window.open('./assets/NADIR-HUSSAIN-RESUME.pdf')">
+          Download CV
+      </button>
+      <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+      </button>
+  </div>
+  <div id="socials-container">
+      <img src="./assets/linkedin.webp" alt="My LinkedIn profile" class="icon"
+           onclick="window.open('https://www.linkedin.com/in/nadir-hussain-/')"/>
+      <img src="./assets/github.webp" alt="My Github profile" class="icon"
+           onclick="window.open('https://github.com/NADIRHUSSAIN11')"/>
+      <img src="./assets/leetcode.webp" alt="My leetcode profile" class="icon"
+           onclick="window.open('https://leetcode.com/u/Nadir_Hussain1/')"/>
+      <img src="./assets/hacker.webp" alt="My hackerrank profile" class="icon"
+           onclick="window.open('https://www.hackerrank.com/profile/nadirarain111')"/>
+      <img src="./assets/medium.webp" alt="My medium profile" class="icon"
+           onclick="window.open('https://medium.com/@nadirhussainarain')"/>
+  </div>
+
+</div>
     </section>
+
     <section id="about" data-aos="fade-right">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Nadir Hussain</h1>
@@ -170,8 +330,47 @@
         src="./assets/arrow.webp"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#experience'"
+        onclick="location.href='./#ach'"
       />
+    </section>
+    <section class="ach-section" id="ach" data-aos="fade-right">
+      <h1 class="title">Achievements</h1>
+      <div class="ach-badge-container">
+        <img src="./assets/badge/Achievements/badge1.webp" alt="Certification 1" onclick="window.open('https://mvp.microsoft.com/en-US/studentambassadors/profile/942cd133-83c7-4579-9553-7c4b5f9cd1bc')">
+        <img src="./assets/badge/Achievements/badge2.webp" alt="Certification 2" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+        <img src="./assets/badge/Achievements/badge3.webp" alt="Certification 3" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+        <img src="./assets/badge/Achievements/badge4.webp" alt="Certification 4"  onclick="window.open('https://www.azureheroes.community/user/15524')">
+        <img src="./assets/badge/Achievements/badge5.webp" alt="Certification 5" onclick="window.open('https://www.azureheroes.community/user/15524')">
+      </div>  
+      <img
+      src="./assets/arrow.webp"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="location.href='./#experience'"
+    />
+    </section>
+    <section class="certification-section" id="certification" data-aos="fade-right">
+      <h1 class="title">Certifications</h1>
+      <div class="badge-container">
+          <img src="./assets/badge/badge1.webp" alt="Certification 1"  onclick="window.open('https://learn.microsoft.com/en-us/users/nadirhussain-6823/credentials/662d750c3c93530d')">
+          <img src="./assets/badge/badge2.webp" alt="Certification 2"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge3.webp" alt="Certification 3"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge4.webp" alt="Certification 4"  onclick="window.open('https://www.hackerrank.com/profile/nadirarain111')">
+          <img src="./assets/badge/badge5.webp" alt="Certification 5"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge6.webp" alt="Certification 6"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge7.webp" alt="Certification 7"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge8.webp" alt="Certification 8"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge9.webp" alt="Certification 9"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge10.webp" alt="Certification 10"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge11.webp" alt="Certification 11"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge12.webp" alt="Certification 12"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge13.webp" alt="Certification 13"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge14.webp" alt="Certification 14"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge15.webp" alt="Certification 15"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge16.webp" alt="Certification 16"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge17.webp" alt="Certification 17"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+          <img src="./assets/badge/badge18.webp" alt="Certification 18"  onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+      </div>
     </section>
     <section id="experience" data-aos="fade-right">
       <p class="section__text__p1">Explore My</p>
@@ -600,18 +799,33 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#certification">Certification</a></li>
+            <li><a href="#ach">Achievements</a></li>
           </ul>
         </div>
       </nav>
       <p>Copyright &#169; 2024 Nadir Hussain. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+      // JavaScript to change the title every 8 seconds in a circular manner
+      // Note: 8 seconds total for one cycle (3 titles)
+      setInterval(() => {
+          const titles = ["Data Engineer", "Gold MLSA", "Microsoft MIEE"];
+          const titleElement = document.querySelector('.section__text__p2');
+          const currentIndex = titles.indexOf(titleElement.textContent);
+          const nextIndex = (currentIndex + 1) % titles.length;
+          titleElement.textContent = titles[nextIndex];
+      }, 3000); // Change title every 8 seconds
+  </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
         offset: 300,
-        duration: 1000,
+        duration: 500,
       });
     </script>
+   
+    
   </body>
 </html>

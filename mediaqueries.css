@@ -1,0 +1,68 @@
+/* ══ TABLET ══ */
+@media(max-width:1200px){
+  section{padding:5rem 6%;}
+  #hero{
+    grid-template-columns:1fr 1fr;
+    padding:7rem 6% 4rem;gap:3rem;
+  }
+  .hero-photo-col{align-items:center;}
+  .source-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .projects-grid{grid-template-columns:repeat(2,1fr);}
+  .talks-grid{grid-template-columns:repeat(2,1fr);}
+  .api-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .pipeline-progress{padding:.6rem 6%;}
+  .pp-label{display:none;}
+  .ph-connector{min-width:40px;}
+  .nav-list{display:none;}
+  .burger{display:flex;}
+  .nav-list.open{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;
+    position:fixed;inset:0;background:rgba(11,15,26,.98);z-index:999;
+  }
+  .nav-list.open .nl{font-size:1.4rem;}
+  .cur-dot,.cur-ring{display:none;}
+  body{cursor:auto;}
+}
+
+/* ══ MOBILE ══ */
+@media(max-width:768px){
+  section{padding:4rem 5%;}
+  .sec-title{font-size:1.75rem;}
+  #hero{
+    grid-template-columns:1fr;
+    padding:6rem 5% 3rem;text-align:center;
+  }
+  .hero-photo-col{align-items:center;}
+  .hero-socials{justify-content:center;}
+  .hero-btns{justify-content:center;}
+  .hero-status-badge{display:inline-flex;}
+  .pipeline-horiz{padding:2rem 5% 1.25rem;}
+  .ph-connector{min-width:24px;}
+  .ph-label{font-size:.55rem;}
+  .projects-grid{grid-template-columns:1fr;}
+  .talks-grid{grid-template-columns:1fr;}
+  .talks-banner{flex-direction:column;gap:1rem;}
+  .tb-div{width:60px;height:1px;}
+  .ach-grid{justify-content:center;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .pipeline-progress{display:none;}
+  .hero-name{font-size:2.6rem;}
+  .hmc-row{grid-template-columns:1fr 1fr;}
+}
+
+/* ══ SMALL ══ */
+@media(max-width:480px){
+  section{padding:3.5rem 4%;}
+  .hero-photo{width:200px;height:200px;}
+  .hero-photo-wrap{width:260px;height:260px;}
+  .ring-outer{width:260px;height:260px;}
+  .ring-inner{width:222px;height:222px;}
+  .hero-name{font-size:2.2rem;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .src-stats{gap:1rem;}
+  .cert-inner img{height:85px;}
+  .stack-layers{gap:2rem;}
+  .api-grid{gap:2rem;}
+  .hmc-row{grid-template-columns:1fr;}
+  .ph-inner{gap:0;overflow-x:auto;}
+}

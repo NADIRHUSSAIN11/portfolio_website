@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nadir Hussain — Data Consultant & Engineer | Ex Gold MLSA @ Microsoft</title>
+  <meta name="description" content="Nadir Hussain — Data Consultant & Engineer. 4x Microsoft Certified. Gold MLSA @ Microsoft. Building scalable data pipelines and cloud-native architectures."/>
+  <meta property="og:title" content="Nadir Hussain — Data Engineer"/>
+  <meta property="og:description" content="4x Microsoft Certified Data Engineer. Gold MLSA @ Microsoft."/>
+  <meta property="og:image" content="https://nadirhussain.social/assets/newdp.webp"/>
+  <meta property="og:url" content="https://nadirhussain.social"/>
+  <link rel="canonical" href="https://nadirhussain.social"/>
+  <link rel="icon" type="image/png" href="./assets/favicon.webp"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="mediaqueries.css"/>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cur-dot" id="cur-dot"></div>
+  <div class="cur-ring" id="cur-ring"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bar"></div>
+      <p class="loader-text mono">Initializing pipeline<span class="blink">_</span></p>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">NH<span class="acc">.</span></a>
+    <ul class="nav-list" id="nav-list">
+      <li><a href="#source" class="nl">About</a></li>
+      <li><a href="#ingestion" class="nl">Skills</a></li>
+      <li><a href="#processing" class="nl">Projects</a></li>
+      <li><a href="#serving" class="nl">Talks</a></li>
+      <li><a href="#analytics" class="nl">Credentials</a></li>
+      <li><a href="#terminal" class="nl mono" style="color:var(--g);">/terminal</a></li>
+      <li><a href="#contact" class="nl nav-api-btn">POST /contact</a></li>
+    </ul>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+      <span class="tt-icon-dark">🌙</span>
+      <span class="tt-icon-light">☀</span>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════
+       HERO — 2-COLUMN: PHOTO | NAME+DETAILS
+  ════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="pipeline-bg-text">DATA PIPELINE</div>
+
+    <!-- COL 1: NAME + DETAILS -->
+    <div class="hero-details-col">
+      <div class="hero-status-badge">
+        <span class="status-dot"></span>
+        <span class="mono" style="font-size:.72rem;color:var(--g);">pipeline.status = RUNNING</span>
+      </div>
+      <h1 class="hero-name">Nadir<br/><span class="acc-txt">Hussain</span></h1>
+      <p class="hero-title mono"><span style="color:var(--g)">const</span> role = <span class="acc-txt" id="typer">"Data Consultant & Engineer"</span><span class="blink" style="color:var(--g)">|</span></p>
+      <p class="hero-desc">Building scalable data pipelines, real-time streaming systems, and cloud-native architectures that turn raw data into business insight.</p>
+
+      <div class="hero-counters">
+        <div class="hc-item">
+          <div class="hc-top"><span class="hc-num mono acc-txt" data-target="40">0</span><span class="mono acc-txt">+</span></div>
+          <span class="hc-lbl">Certifications</span>
+        </div>
+        <div class="hc-item">
+          <div class="hc-top"><span class="hc-num mono acc-txt" data-target="11">0</span><span class="mono acc-txt">+</span></div>
+          <span class="hc-lbl">Pipelines Built</span>
+        </div>
+        <div class="hc-item">
+          <div class="hc-top"><span class="hc-num mono acc-txt" data-target="1000">0</span><span class="mono acc-txt">+</span></div>
+          <span class="hc-lbl">Students Mentored</span>
+        </div>
+        <div class="hc-item">
+          <div class="hc-top"><span class="hc-num mono acc-txt" data-target="10">0</span><span class="mono acc-txt">+</span></div>
+          <span class="hc-lbl">Talks Delivered</span>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="#processing" class="btn-primary">View Projects</a>
+        <a href="https://www.linkedin.com/in/nadir-hussain-/" target="_blank" class="btn-ghost">Download CV ↗</a>
+      </div>
+    </div>
+
+    <!-- COL 2: PHOTO -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-wrap">
+        <div class="photo-ring ring-outer"></div>
+        <div class="photo-ring ring-inner"></div>
+        <img src="./assets/newdp.webp" alt="Nadir Hussain" class="hero-photo"/>
+        <div class="photo-corner photo-corner-tl"></div>
+        <div class="photo-corner photo-corner-br"></div>
+      </div>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/nadir-hussain-/" target="_blank" class="social-pill mono">in</a>
+        <a href="https://github.com/NADIRHUSSAIN11" target="_blank" class="social-pill mono">gh</a>
+        <a href="https://medium.com/@nadirhussainarain" target="_blank" class="social-pill mono">me</a>
+        <a href="https://leetcode.com/u/Nadir_Hussain1/" target="_blank" class="social-pill mono">lc</a>
+        <a href="https://topmate.io/nadir_hussain" target="_blank" class="social-pill mono">tm</a>
+      </div>
+    </div>
+
+    <a href="#source" class="scroll-down"><span class="sd-line"></span><span class="mono sd-text">scroll</span></a>
+  </section>
+
+  <!-- PIPELINE PROGRESS BAR -->
+  <div class="pipeline-progress">
+    <div class="pp-track">
+      <div class="pp-stage active" data-section="source">
+        <span class="pp-dot"></span>
+        <span class="pp-label mono">Source</span>
+      </div>
+      <div class="pp-line"></div>
+      <div class="pp-stage" data-section="ingestion">
+        <span class="pp-dot"></span>
+        <span class="pp-label mono">Ingestion</span>
+      </div>
+      <div class="pp-line"></div>
+      <div class="pp-stage" data-section="processing">
+        <span class="pp-dot"></span>
+        <span class="pp-label mono">Processing</span>
+      </div>
+      <div class="pp-line"></div>
+      <div class="pp-stage" data-section="serving">
+        <span class="pp-dot"></span>
+        <span class="pp-label mono">Serving</span>
+      </div>
+      <div class="pp-line"></div>
+      <div class="pp-stage" data-section="analytics">
+        <span class="pp-dot"></span>
+        <span class="pp-label mono">Analytics</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════
+       PIPELINE BAND — horizontal viz
+  ════════════════════════════════ -->
+  <div class="pipeline-band pipeline-band-horiz-only">
+
+        <!-- HORIZONTAL PIPELINE VIZ -->
+    <div class="pipeline-horiz">
+      <div class="ph-inner">
+        <div class="ph-node active-node" data-delay="0">
+          <div class="ph-dot"></div>
+          <div class="ph-label mono">SOURCE</div>
+        </div>
+        <div class="ph-connector"><div class="ph-flow"></div></div>
+        <div class="ph-node" data-delay="1">
+          <div class="ph-dot"></div>
+          <div class="ph-label mono">INGEST</div>
+        </div>
+        <div class="ph-connector"><div class="ph-flow"></div></div>
+        <div class="ph-node" data-delay="2">
+          <div class="ph-dot"></div>
+          <div class="ph-label mono">TRANSFORM</div>
+        </div>
+        <div class="ph-connector"><div class="ph-flow"></div></div>
+        <div class="ph-node" data-delay="3">
+          <div class="ph-dot"></div>
+          <div class="ph-label mono">LOAD</div>
+        </div>
+        <div class="ph-connector"><div class="ph-flow"></div></div>
+        <div class="ph-node" data-delay="4">
+          <div class="ph-dot"></div>
+          <div class="ph-label mono">SERVE</div>
+        </div>
+      </div>
+      <div class="ph-metrics">
+        <span class="mono phm"><span class="ph-running-dot"></span> Pipeline running</span>
+        <span class="mono phm"><span class="acc-txt" id="rows-sec">952,056</span> rows/sec</span>
+        <span class="mono phm">Latency: <span style="color:#00ff9c;">4 ms</span></span>
+        <span class="mono phm">Status: <span style="color:#00ff9c;font-weight:700;">ACTIVE</span></span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ════════════════════════════════
+       SOURCE — ABOUT
+  ════════════════════════════════ -->
+  <section id="source">
+    <div class="stage-header">
+      <div class="stage-tag mono">STAGE 01 // SOURCE</div>
+      <h2 class="sec-title">About <span class="acc-txt">Nadir</span></h2>
+    </div>
+    <div class="source-grid">
+      <div class="source-img-col">
+        <div class="source-img-wrap">
+          <img src="./assets/about-pic.webp" alt="Nadir Hussain"/>
+          <div class="src-corner src-corner-tl"></div>
+          <div class="src-corner src-corner-br"></div>
+        </div>
+        <div class="src-metadata">
+          <div class="meta-row"><span class="mono meta-key">name:</span><span class="mono meta-val">"Nadir Hussain"</span></div>
+          <div class="meta-row"><span class="mono meta-key">location:</span><span class="mono meta-val">"Karachi, PK"</span></div>
+          <div class="meta-row"><span class="mono meta-key">role:</span><span class="mono meta-val acc-txt">"Data Consultant & Engineer"</span></div>
+          <div class="meta-row"><span class="mono meta-key">company:</span><span class="mono meta-val">"Techlogix"</span></div>
+          <div class="meta-row"><span class="mono meta-key">education:</span><span class="mono meta-val">"NED University · 2020–2024"</span></div>
+          <div class="meta-row"><span class="mono meta-key">certifications:</span><span class="mono meta-val acc-txt">"40+ on LinkedIn"</span></div>
+          <div class="meta-row"><span class="mono meta-key">ex_mlsa:</span><span class="mono meta-val acc-txt">"Ex Gold MLSA @ Microsoft"</span></div>
+          <div class="meta-row"><span class="mono meta-key">ex_miee:</span><span class="mono meta-val acc-txt">"Ex MIEE @ Microsoft"</span></div>
+          <div class="meta-row"><span class="mono meta-key">status:</span><span class="mono" style="color:#00ff9c;">"open_to_opportunities"</span></div>
+        </div>
+      </div>
+      <div class="source-text-col">
+        <p class="body-txt">I'm a Data Consultant & Engineer with <strong>2+ years</strong> of hands-on experience designing and building scalable data pipelines, real-time streaming systems, and cloud-native architectures across enterprise banking domains.</p>
+        <p class="body-txt">Currently at <strong>Techlogix</strong>, I engineer production-grade data solutions using Apache Spark on Cloudera, Apache Kafka for real-time event streaming, Power BI REST API for automated reporting, and Azure for cloud-scale data infrastructure — delivering measurable impact for major financial institutions across the UAE and Pakistan.</p>
+        <p class="body-txt">Beyond engineering — I led multiple technical clubs and societies across the country as <strong>Ex Gold MLSA @ Microsoft</strong> and <strong>Ex MIEE @ Microsoft</strong>, mentored 1000+ students, and delivered 10+ technical talks at Microsoft-hosted events, universities and national conferences. View my <strong>40+ licenses & certifications</strong> on LinkedIn.</p>
+
+        <div class="src-stats">
+          <div class="ss-item"><span class="ss-num mono">2+</span><span class="ss-lbl">Years Exp.</span></div>
+          <div class="ss-item"><span class="ss-num mono">40+</span><span class="ss-lbl">Certifications</span></div>
+          <div class="ss-item"><span class="ss-num mono acc-txt">Ex Gold</span><span class="ss-lbl">MLSA @ Microsoft</span></div>
+          <div class="ss-item"><span class="ss-num mono acc-txt">Ex MIEE</span><span class="ss-lbl">@ Microsoft</span></div>
+        </div>
+
+        <div class="src-socials">
+          <a href="https://www.linkedin.com/in/nadir-hussain-/" target="_blank" class="ss-link mono">LinkedIn ↗</a>
+          <a href="https://github.com/NADIRHUSSAIN11" target="_blank" class="ss-link mono">GitHub ↗</a>
+          <a href="https://medium.com/@nadirhussainarain" target="_blank" class="ss-link mono">Medium ↗</a>
+          <a href="https://topmate.io/nadir_hussain" target="_blank" class="ss-link mono">Topmate ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- code ticker -->
+  <div class="pipeline-band pipeline-band-ticker-only">
+        <!-- CODE TICKER -->
+    <div class="code-ticker-wrap">
+      <div class="code-ticker" id="code-ticker">
+        <span class="mono ct-snippet"><span style="color:var(--g)">date</span> = CURRENT_DATE()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">CREATE TABLE</span> silver.transactions <span style="color:var(--acc)">USING DELTA PARTITIONED BY</span> (year, month)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">df</span> = spark.read.format(<span style="color:#ffd740">"kafka"</span>).option(<span style="color:#ffd740">"subscribe"</span>, <span style="color:#ffd740">"events"</span>).load()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">INSERT INTO</span> gold.kpi_summary <span style="color:var(--acc)">SELECT</span> * <span style="color:var(--acc)">FROM</span> silver.transactions <span style="color:var(--acc)">WHERE</span> status = <span style="color:#ffd740">'active'</span></span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">pipeline</span> = AzureDataFactory.run(<span style="color:#ffd740">"medallion_etl"</span>, env=<span style="color:#ffd740">"prod"</span>)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">ALTER TABLE</span> bronze.raw_events <span style="color:var(--acc)">ADD COLUMN</span> ingested_at <span style="color:var(--g)">TIMESTAMP</span> DEFAULT CURRENT_TIMESTAMP()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">stream</span> = KafkaConsumer(<span style="color:#ffd740">"stock-prices"</span>, bootstrap_servers=<span style="color:#ffd740">"broker:9092"</span>)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">df</span>.write.format(<span style="color:#ffd740">"delta"</span>).mode(<span style="color:#ffd740">"append"</span>).partitionBy(<span style="color:#ffd740">"year"</span>, <span style="color:#ffd740">"month"</span>).save(<span style="color:#ffd740">"/mnt/gold/"</span>)</span>
+        <span class="ct-sep">·</span>
+        <!-- duplicate for seamless loop -->
+        <span class="mono ct-snippet"><span style="color:var(--g)">date</span> = CURRENT_DATE()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">CREATE TABLE</span> silver.transactions <span style="color:var(--acc)">USING DELTA PARTITIONED BY</span> (year, month)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">df</span> = spark.read.format(<span style="color:#ffd740">"kafka"</span>).option(<span style="color:#ffd740">"subscribe"</span>, <span style="color:#ffd740">"events"</span>).load()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">INSERT INTO</span> gold.kpi_summary <span style="color:var(--acc)">SELECT</span> * <span style="color:var(--acc)">FROM</span> silver.transactions <span style="color:var(--acc)">WHERE</span> status = <span style="color:#ffd740">'active'</span></span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">pipeline</span> = AzureDataFactory.run(<span style="color:#ffd740">"medallion_etl"</span>, env=<span style="color:#ffd740">"prod"</span>)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--acc)">ALTER TABLE</span> bronze.raw_events <span style="color:var(--acc)">ADD COLUMN</span> ingested_at <span style="color:var(--g)">TIMESTAMP</span> DEFAULT CURRENT_TIMESTAMP()</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">stream</span> = KafkaConsumer(<span style="color:#ffd740">"stock-prices"</span>, bootstrap_servers=<span style="color:#ffd740">"broker:9092"</span>)</span>
+        <span class="ct-sep">·</span>
+        <span class="mono ct-snippet"><span style="color:var(--g)">df</span>.write.format(<span style="color:#ffd740">"delta"</span>).mode(<span style="color:#ffd740">"append"</span>).partitionBy(<span style="color:#ffd740">"year"</span>, <span style="color:#ffd740">"month"</span>).save(<span style="color:#ffd740">"/mnt/gold/"</span>)</span>
+        <span class="ct-sep">·</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════
+       INGESTION — SKILLS
+  ════════════════════════════════ -->
+  <section id="ingestion">
+    <div class="stage-header">
+      <div class="stage-tag mono">STAGE 02 // INGESTION</div>
+      <h2 class="sec-title">Skills & <span class="acc-txt">Tech Stack</span></h2>
+    </div>
+    <p class="stage-sub mono">// hover over any tool to see how it fits in the pipeline</p>
+
+    <div class="stack-layers">
+
+      <div class="stack-layer">
+        <div class="sl-label">
+          <span class="sl-num mono">01</span>
+          <span class="sl-name">Data Ingestion & Streaming</span>
+          <div class="sl-line"></div>
+        </div>
+        <div class="sl-tools">
+          <div class="tool-chip" data-tooltip="Real-time event streaming at scale">
+            <span class="tc-dot" style="background:#e31e1e"></span>Apache Kafka
+          </div>
+          <div class="tool-chip" data-tooltip="Distributed Spark-based processing">
+            <span class="tc-dot" style="background:#ff6b00"></span>Apache Spark
+          </div>
+          <div class="tool-chip exp" data-tooltip="PySpark for large-scale data transformation">
+            <span class="tc-dot" style="background:#ff6b00"></span>PySpark
+          </div>
+          <div class="tool-chip" data-tooltip="IoT data streaming on Azure">
+            <span class="tc-dot" style="background:#0078d4"></span>Azure IoT Hub
+          </div>
+          <div class="tool-chip" data-tooltip="HDFS-based distributed storage">
+            <span class="tc-dot" style="background:#ffd700"></span>Hadoop / Hive
+          </div>
+          <div class="tool-chip" data-tooltip="Enterprise data platform">
+            <span class="tc-dot" style="background:#f96702"></span>Cloudera
+          </div>
+          <div class="tool-chip" data-tooltip="Search & observability stack">
+            <span class="tc-dot" style="background:#00bfb3"></span>Elastic Stack
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-layer">
+        <div class="sl-label">
+          <span class="sl-num mono">02</span>
+          <span class="sl-name">Cloud & Azure Platform</span>
+          <div class="sl-line"></div>
+        </div>
+        <div class="sl-tools">
+          <div class="tool-chip exp" data-tooltip="Managed Spark + Delta Lake on Azure">
+            <span class="tc-dot" style="background:#ff3621"></span>Azure Databricks
+          </div>
+          <div class="tool-chip exp" data-tooltip="ETL/ELT orchestration on Azure">
+            <span class="tc-dot" style="background:#0078d4"></span>Azure Data Factory
+          </div>
+          <div class="tool-chip" data-tooltip="Unified analytics platform">
+            <span class="tc-dot" style="background:#0078d4"></span>Synapse Analytics
+          </div>
+          <div class="tool-chip" data-tooltip="All-in-one Microsoft data platform">
+            <span class="tc-dot" style="background:#0078d4"></span>Microsoft Fabric
+          </div>
+          <div class="tool-chip" data-tooltip="NoSQL multi-model database">
+            <span class="tc-dot" style="background:#0078d4"></span>Azure Cosmos DB
+          </div>
+          <div class="tool-chip" data-tooltip="Object storage for data lakes">
+            <span class="tc-dot" style="background:#ff9900"></span>AWS S3
+          </div>
+          <div class="tool-chip" data-tooltip="Google Cloud Platform">
+            <span class="tc-dot" style="background:#4285f4"></span>GCP
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-layer">
+        <div class="sl-label">
+          <span class="sl-num mono">03</span>
+          <span class="sl-name">Databases, ETL & Warehousing</span>
+          <div class="sl-line"></div>
+        </div>
+        <div class="sl-tools">
+          <div class="tool-chip exp" data-tooltip="Enterprise RDBMS & reporting">
+            <span class="tc-dot" style="background:#cc2927"></span>SQL Server
+          </div>
+          <div class="tool-chip exp" data-tooltip="Oracle FCCM for AML compliance">
+            <span class="tc-dot" style="background:#f80000"></span>Oracle / PL/SQL
+          </div>
+          <div class="tool-chip exp" data-tooltip="SQL Server Integration/Analysis Services">
+            <span class="tc-dot" style="background:#cc2927"></span>SSIS / SSAS
+          </div>
+          <div class="tool-chip" data-tooltip="Enterprise ETL platform">
+            <span class="tc-dot" style="background:#ff6d70"></span>Talend
+          </div>
+          <div class="tool-chip" data-tooltip="Star schema dimensional modeling">
+            <span class="tc-dot" style="background:#4169e1"></span>PostgreSQL
+          </div>
+          <div class="tool-chip" data-tooltip="Document-oriented NoSQL">
+            <span class="tc-dot" style="background:#47a248"></span>MongoDB
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-layer">
+        <div class="sl-label">
+          <span class="sl-num mono">04</span>
+          <span class="sl-name">Orchestration, Languages & BI</span>
+          <div class="sl-line"></div>
+        </div>
+        <div class="sl-tools">
+          <div class="tool-chip exp" data-tooltip="Primary language for data engineering">
+            <span class="tc-dot" style="background:#3776ab"></span>Python
+          </div>
+          <div class="tool-chip exp" data-tooltip="Complex queries & analytics">
+            <span class="tc-dot" style="background:#4479a1"></span>SQL / PL/SQL
+          </div>
+          <div class="tool-chip" data-tooltip="DAG-based pipeline orchestration">
+            <span class="tc-dot" style="background:#017cee"></span>Apache Airflow
+          </div>
+          <div class="tool-chip exp" data-tooltip="Self-service BI & dashboards">
+            <span class="tc-dot" style="background:#f2c811"></span>Power BI
+          </div>
+          <div class="tool-chip" data-tooltip="Secure compliance REST APIs">
+            <span class="tc-dot" style="background:#000"></span>Flask / REST
+          </div>
+          <div class="tool-chip" data-tooltip="Version control">
+            <span class="tc-dot" style="background:#f05032"></span>Git
+          </div>
+          <div class="tool-chip" data-tooltip="Shell scripting & automation">
+            <span class="tc-dot" style="background:#fcc624"></span>Linux / Shell
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tool-tooltip" id="tool-tooltip"></div>
+  </section>
+
+  <!-- ════════════════════════════════
+       PROCESSING — PROJECTS
+  ════════════════════════════════ -->
+  <section id="processing">
+    <div class="stage-header">
+      <div class="stage-tag mono">STAGE 03 // PROCESSING</div>
+      <h2 class="sec-title">Pipeline <span class="acc-txt">Projects</span></h2>
+    </div>
+    <p class="stage-sub mono">// each project is a real data architecture</p>
+
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project1.webp" alt="Kafka Stock Market"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/kafka-Azure-data-engineering-real-time-stock-market-project" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">APIs</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Kafka</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Spark</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Azure</span>
+          </div>
+          <h3>Kafka & Azure Real-Time Stock Market Pipeline</h3>
+          <p>End-to-end real-time stock data pipeline using Kafka for streaming ingestion and Azure for cloud-scale processing and storage.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">type:</span> streaming</span>
+            <span class="pm-item mono"><span style="color:var(--g)">scale:</span> real-time</span>
+          </div>
+          <div class="proj-tags"><span>Kafka</span><span>Azure</span><span>Python</span><span>Spark</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project9.webp" alt="Smart Meter IoT"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/Smart-Meter-Azure-IOT-Project" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">IoT Devices</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Azure IoT</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Spark</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Dashboard</span>
+          </div>
+          <h3>Smart Meter Azure IoT Data Streaming</h3>
+          <p>Real-time IoT ingestion pipeline on Azure for smart meter telemetry — from device events to live analytics dashboard.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">type:</span> IoT pipeline</span>
+            <span class="pm-item mono"><span style="color:var(--g)">cloud:</span> Azure</span>
+          </div>
+          <div class="proj-tags"><span>Azure IoT</span><span>Spark</span><span>Streaming</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project5.webp" alt="Azure Medallion"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/azure-medallion-dbt-adf-adb-project" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">Raw</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node" style="color:#cd7f32">Bronze</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node" style="color:#c0c0c0">Silver</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node" style="color:#ffd700">Gold</span>
+          </div>
+          <h3>Azure Medallion Architecture — dbt, ADF & Databricks</h3>
+          <p>Layered data lakehouse with bronze/silver/gold zones using Azure Data Factory, Databricks and dbt for clean, reliable data at every tier.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">type:</span> lakehouse</span>
+            <span class="pm-item mono"><span style="color:var(--g)">pattern:</span> medallion</span>
+          </div>
+          <div class="proj-tags"><span>ADF</span><span>Databricks</span><span>dbt</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project11.webp" alt="Migration Talend"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/data-migration-from-mysql-to-mssqlserver-using-talend" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node acc">MySQL</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Talend ETL</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">SQL Server</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">DWH</span>
+          </div>
+          <h3>MySQL → SQL Server Migration with Talend</h3>
+          <p>Full database migration of 50+ tables and 1M+ rows using Talend ETL, improving data accessibility by 21%.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">rows:</span> 1M+</span>
+            <span class="pm-item mono"><span style="color:var(--g)">tables:</span> 50+</span>
+          </div>
+          <div class="proj-tags"><span>Talend</span><span>SQL Server</span><span>ETL</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project2.webp" alt="Weather Airflow"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/airflow-etl-weather-api-project" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">Weather API</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Airflow</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Transform</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">S3</span>
+          </div>
+          <h3>Weather Data ETL with Apache Airflow & S3</h3>
+          <p>Orchestrated weather data pipeline using Apache Airflow DAGs for scheduling, transformation, and storage in AWS S3.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">orchestration:</span> Airflow</span>
+            <span class="pm-item mono"><span style="color:var(--g)">storage:</span> S3</span>
+          </div>
+          <div class="proj-tags"><span>Airflow</span><span>AWS S3</span><span>ETL</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project4.webp" alt="Tokyo Olympics"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/Tokyo-Olympic-Data-Analytics-Azure-Data-Engineering-Project" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">Raw Data</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">ADF</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">Databricks</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Power BI</span>
+          </div>
+          <h3>Tokyo Olympics Data Analytics — Azure</h3>
+          <p>Full Azure data engineering pipeline ingesting, transforming, and visualising Tokyo 2020 Olympics dataset end-to-end.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">type:</span> batch</span>
+            <span class="pm-item mono"><span style="color:var(--g)">viz:</span> Power BI</span>
+          </div>
+          <div class="proj-tags"><span>Azure</span><span>Databricks</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project10.webp" alt="PSL PySpark"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/PSL_data_analysis_pyspark" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node">CSV Data</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">HDFS</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">PySpark</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Insights</span>
+          </div>
+          <h3>PSL Data Analysis Using PySpark</h3>
+          <p>Large-scale cricket analytics using distributed PySpark processing on HDFS — match statistics, player performance, trend analysis.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">engine:</span> PySpark</span>
+            <span class="pm-item mono"><span style="color:var(--g)">storage:</span> HDFS</span>
+          </div>
+          <div class="proj-tags"><span>PySpark</span><span>HDFS</span><span>Analytics</span></div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-img-wrap">
+          <img src="./assets/project8.webp" alt="Internetsales SSIS"/>
+          <div class="proj-overlay">
+            <a href="https://github.com/NADIRHUSSAIN11/Dashboard-Internetsales/blob/main/README.md" target="_blank" class="proj-overlay-btn mono">View on GitHub ↗</a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-arch mono">
+            <span class="pa-node acc">SSIS ETL</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node acc">SSAS</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Cubes</span>
+            <span class="pa-arr">→</span>
+            <span class="pa-node">Power BI</span>
+          </div>
+          <h3>Internetsales ETL — SSIS, SSAS & Power BI</h3>
+          <p>Enterprise ETL pipeline migrating 1M+ rows with SSIS, 4+ SSAS cubes, and Power BI dashboard reducing manual reporting by 14%.</p>
+          <div class="proj-meta">
+            <span class="pm-item mono"><span style="color:var(--g)">rows:</span> 1M+</span>
+            <span class="pm-item mono"><span style="color:var(--g)">reduction:</span> 14%</span>
+          </div>
+          <div class="proj-tags"><span>SSIS</span><span>SSAS</span><span>Power BI</span></div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="https://github.com/NADIRHUSSAIN11" target="_blank" class="btn-ghost">View all on GitHub ↗</a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       SERVING — TALKS & MENTORSHIP
+  ════════════════════════════════ -->
+  <section id="serving">
+    <div class="stage-header">
+      <div class="stage-tag mono">STAGE 04 // SERVING</div>
+      <h2 class="sec-title">Talks & <span class="acc-txt">Mentorship</span></h2>
+    </div>
+    <div class="talks-banner">
+      <div class="tb-s"><span class="tb-n mono">10+</span><span class="tb-l">Talks</span></div>
+      <div class="tb-div"></div>
+      <div class="tb-s"><span class="tb-n mono">1000+</span><span class="tb-l">Students</span></div>
+      <div class="tb-div"></div>
+      <div class="tb-s"><span class="tb-n mono">5+</span><span class="tb-l">Universities</span></div>
+      <div class="tb-div"></div>
+      <div class="tb-s"><span class="tb-n mono">3+</span><span class="tb-l">Years Speaking</span></div>
+    </div>
+    <div class="talks-grid">
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20240131-WA0008.jpg" alt="Azure DE HEC"/></div><div class="tk-body"><span class="tk-meta mono">Microsoft · HEC · 2024</span><h3>Azure Data Engineering</h3><p>ETA Live Session hosted by Microsoft & Higher Education Commission of Pakistan.</p><a href="https://cct.neduet.edu.pk/mlsa_events" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20240213-WA0021.jpg" alt="ADF Advanced"/></div><div class="tk-body"><span class="tk-meta mono">Microsoft · HEC · 2024</span><h3>Azure Data Factory Advanced</h3><p>Advanced ETA Live Session on ADF pipelines for Microsoft & HEC Pakistan.</p><a href="https://events.hec.gov.pk/#/webpage/268" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20240213-WA0022.jpg" alt="ADF"/></div><div class="tk-body"><span class="tk-meta mono">Microsoft · HEC · 2024</span><h3>Azure Data Factory</h3><p>Foundational ETA Live Session on ADF concepts for Microsoft & HEC Pakistan.</p><a href="https://events.hec.gov.pk/#/webpage/263" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/Screenshot_20240408_053338_LinkedIn.jpg" alt="Tech Fest 23"/></div><div class="tk-body"><span class="tk-meta mono">Tech Fest '23 · NED · Dec 2023</span><h3>Empower Your Data: Data Engineering Mastery</h3><p>Delivered as Gold MLSA Regional Lead EMEA. Sponsored by Trend Micro at NED University.</p><a href="https://cct.neduet.edu.pk/mlsa_23" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20231005-WA0000.jpg" alt="DevCon 2023"/></div><div class="tk-body"><span class="tk-meta mono">DevCon Pakistan · Oct 2023</span><h3>DevCon Pakistan — Guest & Panel Discussion</h3><p>Featured guest and panellist at DevCon Pakistan 2023, representing Gold MLSA @ Microsoft.</p><a href="https://cct.neduet.edu.pk/mlsa_23" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/Screenshot_20230807_185239_LinkedIn.jpg" alt="DE Azure SMIU"/></div><div class="tk-body"><span class="tk-meta mono">TechSurge · SMIU · Apr 2023</span><h3>Fundamentals of Data Engineering in the Light of Azure</h3><p>Covered DE intro, tools, techniques, and the full data engineering lifecycle for SMIU Chapter.</p><a href="https://cct.neduet.edu.pk/mlsa_23" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20240605-WA0058.jpg" alt="Data Storage NED"/></div><div class="tk-body"><span class="tk-meta mono">NED University · Jun 2024</span><h3>Data Storage Solutions in Azure</h3><p>On-campus session co-organised with Koderz Club, CyberSENTS, AI Alliance, and MLSA. Sponsored by Trend Micro.</p><a href="https://cct.neduet.edu.pk/mlsa_events" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/Copy of Speaker (Instagram Post).jpg" alt="AI Fundamentals MUET"/></div><div class="tk-body"><span class="tk-meta mono">MLSA MUET SZAB · Jul 2022</span><h3>Azure AI Fundamentals: Get Started with AI</h3><p>Co-speaker at MLSA MUET SZAB Club introducing Azure AI fundamentals to students across Pakistan.</p><a href="https://cct.neduet.edu.pk/mlsa_22" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/IMG-20220827-WA0033.jpg" alt="Azure Fundamentals Workshop"/></div><div class="tk-body"><span class="tk-meta mono">MLSA Pakistan · Aug 2022</span><h3>Microsoft Azure Fundamentals Workshop</h3><p>Co-hosted with MLSA Pakistan. Attendees received LinkedIn Premium vouchers and Microsoft certifications.</p><a href="https://cct.neduet.edu.pk/mlsa_22" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/20220623_120322_0000.png" alt="Azure Cloud NEDUET"/></div><div class="tk-body"><span class="tk-meta mono">MLSA NEDUET · Jun 2022</span><h3>Microsoft Azure and Cloud Computing</h3><p>Free workshop on MS Teams. Nadir served as Mentor, Host, Founder & Lead of MLSA NEDUET Karachi.</p><a href="https://cct.neduet.edu.pk/mlsa_22" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/20220417_151518_0000.png" alt="Git GitHub"/></div><div class="tk-body"><span class="tk-meta mono">MLSA NEDUET · Apr 2022</span><h3>Introduction to Git & GitHub</h3><p>Online workshop on Git & GitHub best practices for the MLSA Students Club at NED University.</p><a href="https://cct.neduet.edu.pk/mlsa_22" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+      <div class="talk-card"><div class="tk-img"><img src="./assets/events/de101_hyderabad.png" alt="Data Engineering 101 MLSA Hyderabad"/></div><div class="tk-body"><span class="tk-meta mono">MLSA Hyderabad · Mar 2024</span><h3>Data Engineering 101</h3><p>Speaker session hosted by MLSA Hyderabad covering core data engineering concepts, tools, and career paths. As Gold MLSA & NED UET Microsoft Club Lead.</p><a href="https://www.linkedin.com/posts/tcchyderabad_dataengineering-learnwithdata-techeducation-activity-7168302784339996672-glgQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADYZBksBmgpf0WxgFBqCUVBUNf3HjeHxqK0" target="_blank" class="tk-verify mono">Verify ↗</a></div></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       ANALYTICS — CERTIFICATIONS & ACHIEVEMENTS
+  ════════════════════════════════ -->
+  <section id="analytics">
+    <div class="stage-header">
+      <div class="stage-tag mono">STAGE 05 // ANALYTICS</div>
+      <h2 class="sec-title">Certs & <span class="acc-txt">Achievements</span></h2>
+    </div>
+
+    <div class="cert-track-wrap">
+      <div class="cert-fade-l"></div>
+      <div class="cert-scroll">
+        <div class="cert-inner" id="cert-inner">
+          <img src="./assets/badge/badge19.webp" alt="cert" onclick="window.open('https://learn.microsoft.com/en-us/users/nadirhussain-6823/credentials/c8ccd57da6df3f24')"/>
+          <img src="./assets/badge/badge1.webp" alt="cert" onclick="window.open('https://learn.microsoft.com/en-us/users/nadirhussain-6823/credentials/662d750c3c93530d')"/>
+          <img src="./assets/badge/badge2.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge3.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge4.webp" alt="cert" onclick="window.open('https://www.hackerrank.com/profile/nadirarain111')"/>
+          <img src="./assets/badge/badge5.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge6.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge7.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge8.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge9.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge10.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge11.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge12.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge13.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge14.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge15.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge16.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge17.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge18.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <!-- Seamless loop duplicates -->
+          <img src="./assets/badge/badge19.webp" alt="cert" onclick="window.open('https://learn.microsoft.com/en-us/users/nadirhussain-6823/credentials/c8ccd57da6df3f24')"/>
+          <img src="./assets/badge/badge1.webp" alt="cert" onclick="window.open('https://learn.microsoft.com/en-us/users/nadirhussain-6823/credentials/662d750c3c93530d')"/>
+          <img src="./assets/badge/badge2.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge3.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge4.webp" alt="cert" onclick="window.open('https://www.hackerrank.com/profile/nadirarain111')"/>
+          <img src="./assets/badge/badge5.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge6.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge7.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge8.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge9.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge10.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge11.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge12.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge13.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge14.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge15.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge16.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge17.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+          <img src="./assets/badge/badge18.webp" alt="cert" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')"/>
+        </div>
+      </div>
+      <div class="cert-fade-r"></div>
+    </div>
+    <p class="cert-note mono">// click any badge to verify on Credly or Microsoft Learn</p>
+
+    <div class="ach-grid">
+      <div class="ach-card" onclick="window.open('https://www.linkedin.com/posts/nadir-hussain-_gold-lor-activity-7251152208572936193-mWuC?utm_source=share&utm_medium=member_desktop&rcm=ACoAADYZBksBmgpf0WxgFBqCUVBUNf3HjeHxqK0')">
+        <img src="./assets/badge/Achievements/badge1.webp" alt="Gold MLSA"/>
+        <p>Gold Microsoft Learn Student Ambassador</p>
+      </div>
+      <div class="ach-card" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+        <img src="./assets/badge/Achievements/badge2.webp" alt="Achievement"/>
+        <p>Credly Achievement Badge</p>
+      </div>
+      <div class="ach-card" onclick="window.open('https://www.credly.com/users/nadir-hussain.3543f8a6/badges')">
+        <img src="./assets/badge/Achievements/badge3.webp" alt="Achievement"/>
+        <p>Community Recognition</p>
+      </div>
+      <div class="ach-card" onclick="window.open('https://www.azureheroes.community/user/15524')">
+        <img src="./assets/badge/Achievements/badge4.webp" alt="Azure Heroes"/>
+        <p>Azure Heroes — Community Hero</p>
+      </div>
+      <div class="ach-card" onclick="window.open('https://www.azureheroes.community/user/15524')">
+        <img src="./assets/badge/Achievements/badge5.webp" alt="Azure Heroes Kudos"/>
+        <p>Azure Heroes Kudos Badge</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       TERMINAL — EASTER EGG
+  ════════════════════════════════ -->
+  <section id="terminal">
+    <div class="stage-header">
+      <div class="stage-tag mono" style="color:var(--g)">/terminal — interactive</div>
+      <h2 class="sec-title mono">nadir<span class="acc-txt">@pipeline</span>:~$</h2>
+    </div>
+    <div class="terminal-window">
+      <div class="term-titlebar">
+        <div class="term-dots">
+          <span class="td td-r"></span>
+          <span class="td td-y"></span>
+          <span class="td td-g"></span>
+        </div>
+        <span class="term-title mono">nadir@pipeline — zsh</span>
+      </div>
+      <div class="term-body" id="term-body">
+        <div class="term-line"><span class="term-prompt mono">nadir@pipeline:~$</span><span class="mono term-output" style="color:var(--acc)"> Welcome! Type a command below.</span></div>
+        <div class="term-line mono" style="color:var(--text2)">Available: whoami · skills · projects · certifications · talks · contact · clear</div>
+      </div>
+      <div class="term-input-row">
+        <span class="term-prompt mono">nadir@pipeline:~$</span>
+        <input type="text" class="term-input mono" id="term-input" placeholder="type a command..." autocomplete="off" spellcheck="false"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════
+       CONTACT — API DOCS
+  ════════════════════════════════ -->
+  <section id="contact">
+    <div class="stage-header">
+      <div class="stage-tag mono">POST /contact</div>
+      <h2 class="sec-title">API <span class="acc-txt">Endpoint</span></h2>
+    </div>
+    <div class="api-grid">
+      <div class="api-docs">
+        <div class="api-method-badge mono">POST</div>
+        <div class="api-url mono">/v1/contact/nadir-hussain</div>
+        <div class="api-creds mono">Ex Gold MLSA <span style="color:var(--text3)">@</span> Microsoft &nbsp;·&nbsp; Ex MIEE <span style="color:var(--text3)">@</span> Microsoft</div>
+        <p class="body-txt" style="margin:1.5rem 0">Open to data engineering roles, consulting engagements, speaking invitations, and mentorship sessions. Send a request below.</p>
+        <div class="api-params">
+          <div class="param-row mono">
+            <span class="param-key">name</span>
+            <span class="param-type">string</span>
+            <span class="param-req">required</span>
+          </div>
+          <div class="param-row mono">
+            <span class="param-key">email</span>
+            <span class="param-type">string</span>
+            <span class="param-req">required</span>
+          </div>
+          <div class="param-row mono">
+            <span class="param-key">subject</span>
+            <span class="param-type">string</span>
+            <span class="param-opt">optional</span>
+          </div>
+          <div class="param-row mono">
+            <span class="param-key">message</span>
+            <span class="param-type">string</span>
+            <span class="param-req">required</span>
+          </div>
+        </div>
+        <div class="direct-links">
+          <a href="https://www.linkedin.com/in/nadir-hussain-/" target="_blank" class="dl-row mono">LinkedIn <span>↗</span></a>
+          <a href="https://topmate.io/nadir_hussain" target="_blank" class="dl-row mono">Book a Session — Topmate <span>↗</span></a>
+          <a href="https://github.com/NADIRHUSSAIN11" target="_blank" class="dl-row mono">GitHub <span>↗</span></a>
+          <a href="https://medium.com/@nadirhussainarain" target="_blank" class="dl-row mono">Medium <span>↗</span></a>
+        </div>
+      </div>
+      <div class="api-form-col">
+        <div class="api-request-label mono">// Request Body</div>
+        <form class="api-form" id="contact-form" action="https://formspree.io/f/mqeygypz" method="POST">
+          <!-- Formspree config -->
+          <input type="hidden" name="_subject" value="New message from nadirhussain.social"/>
+          <input type="text" name="_gotcha" style="display:none"/>
+          <div class="af-field">
+            <label class="mono">name <span style="color:var(--g)">// string</span></label>
+            <input type="text" name="name" placeholder='"Your Name"' class="mono" required/>
+          </div>
+          <div class="af-field">
+            <label class="mono">email <span style="color:var(--g)">// string</span></label>
+            <input type="email" name="email" placeholder='"your@email.com"' class="mono" required/>
+          </div>
+          <div class="af-field">
+            <label class="mono">subject <span style="color:var(--g)">// optional</span></label>
+            <input type="text" name="subject" placeholder='"Job Opportunity / Speaking / Mentorship"' class="mono"/>
+          </div>
+          <div class="af-field">
+            <label class="mono">message <span style="color:var(--g)">// string</span></label>
+            <textarea name="message" rows="5" placeholder='"Tell me about your project or opportunity..."' class="mono" required></textarea>
+          </div>
+          <button type="submit" class="api-submit-btn mono" id="api-submit">
+            <span id="submit-text">Execute Request →</span>
+          </button>
+          <div class="api-response" id="api-response"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-logo mono">nadir@pipeline<span class="acc">:~$</span></span>
+      <span class="mono footer-copy" style="color:var(--text3)">© 2025 Nadir Hussain &nbsp;·&nbsp; Ex Gold MLSA @ Microsoft &nbsp;·&nbsp; Ex MIEE @ Microsoft &nbsp;·&nbsp; All Rights Reserved</span>
+      <a href="#hero" class="mono footer-top acc-txt">↑ scroll top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

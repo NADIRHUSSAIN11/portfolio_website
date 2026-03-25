@@ -805,10 +805,10 @@
     </div>
     <div class="api-grid">
       <div class="api-docs">
-        <div class="api-method-badge mono">POST</div>
-        <div class="api-url mono">/v1/contact/nadir-hussain</div>
+        <div class="api-method-badge mono">SEND</div>
+        <div class="api-url mono">/v1/messages/nadir-hussain</div>
         <div class="api-creds mono">Ex Gold MLSA <span style="color:var(--text3)">@</span> Microsoft &nbsp;·&nbsp; Ex MIEE <span style="color:var(--text3)">@</span> Microsoft</div>
-        <p class="body-txt" style="margin:1.5rem 0">Open to data engineering roles, consulting engagements, speaking invitations, and mentorship sessions. Send a request below.</p>
+        <p class="body-txt" style="margin:1.5rem 0">Open to data engineering roles, consulting engagements, speaking invitations, and mentorship sessions. Fill in the form and click Send — your email client will open with everything pre-filled, ready to go.</p>
         <div class="api-params">
           <div class="param-row mono">
             <span class="param-key">name</span>
@@ -839,11 +839,8 @@
         </div>
       </div>
       <div class="api-form-col">
-        <div class="api-request-label mono">// Request Body</div>
-        <form class="api-form" id="contact-form" action="https://formspree.io/f/mqeygypz" method="POST">
-          <!-- Formspree config -->
-          <input type="hidden" name="_subject" value="New message from nadirhussain.social"/>
-          <input type="text" name="_gotcha" style="display:none"/>
+        <div class="api-request-label mono">// Compose Message</div>
+        <form class="api-form" id="contact-form">
           <div class="af-field">
             <label class="mono">name <span style="color:var(--g)">// string</span></label>
             <input type="text" name="name" placeholder='"Your Name"' class="mono" required/>
@@ -861,7 +858,7 @@
             <textarea name="message" rows="5" placeholder='"Tell me about your project or opportunity..."' class="mono" required></textarea>
           </div>
           <button type="submit" class="api-submit-btn mono" id="api-submit">
-            <span id="submit-text">Execute Request →</span>
+            <span id="submit-text">Send Message →</span>
           </button>
           <div class="api-response" id="api-response"></div>
         </form>

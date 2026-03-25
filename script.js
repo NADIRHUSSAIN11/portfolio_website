@@ -374,58 +374,23 @@ termInput.addEventListener('keydown', e => {
   termBody.scrollTop = termBody.scrollHeight;
 });
 
-/* ── CONTACT FORM — Formspree ── */
-const form = document.getElementById('contact-form');
-const submitBtn = document.getElementById('api-submit');
-const submitText = document.getElementById('submit-text');
-const apiResp = document.getElementById('api-response');
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  const name = document.querySelector('input[name="name"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const subject = document.querySelector('input[name="subject"]').value || "Contact from Portfolio";
+  const message = document.querySelector('textarea[name="message"]').value;
 
-    // Loading state
-    submitBtn.disabled = true;
-    submitText.textContent = 'Sending request...';
-    apiResp.style.display = 'none';
+  // ✅ Clean professional format
+  const body = `${message}\n\nRegards,\n${name}\n${email}`;
 
-    // Collect form data as JSON
-    const payload = {
-      name:    form.querySelector('[name="name"]').value,
-      email:   form.querySelector('[name="email"]').value,
-      subject: form.querySelector('[name="subject"]').value || 'Portfolio Contact',
-      message: form.querySelector('[name="message"]').value,
-    };
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=nadirarain111@gmail.com`
+    + `&su=${encodeURIComponent(subject)}`
+    + `&body=${encodeURIComponent(body)}`;
 
-    try {
-      const res = await fetch('https://formspree.io/f/mqeygypz', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
+  window.open(gmailUrl, "_blank");
 
-      const json = await res.json();
-
-      if (res.ok) {
-        submitText.textContent = 'Execute Request →';
-        submitBtn.disabled = false;
-        apiResp.style.display = 'block';
-        apiResp.className = 'api-response success';
-        apiResp.innerHTML = `<span class="mono" style="color:var(--g);font-weight:700;">200 OK</span><span class="mono" style="color:var(--text2);margin-left:1rem;">// Message sent. Nadir will respond within 24h.</span>`;
-        form.reset();
-      } else {
-        const errMsg = json?.errors?.[0]?.message || 'Submission failed';
-        throw new Error(errMsg);
-      }
-    } catch (err) {
-      submitText.textContent = 'Execute Request →';
-      submitBtn.disabled = false;
-      apiResp.style.display = 'block';
-      apiResp.className = 'api-response error';
-      apiResp.innerHTML = `<span class="mono" style="color:#ff5f57;font-weight:700;">500 ERROR</span><span class="mono" style="color:var(--text2);margin-left:1rem;">// ${err.message || 'Failed to send. Try nadirarain111@gmail.com directly.'}</span>`;
-    }
-  });
-}
+  document.getElementById("api-response").innerHTML =
+    `<span style="color:#00ff9c;">200 OK</span> // Redirecting to Gmail...`;
+});

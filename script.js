@@ -181,26 +181,36 @@ window.addEventListener('scroll', () => {
 /* ── HAMBURGER ── */
 const burger = document.getElementById('burger');
 const navList = document.getElementById('nav-list');
-burger.addEventListener('click', () => {
-  burger.classList.toggle('open');
-  navList.classList.toggle('open');
-  document.body.style.overflow = navList.classList.contains('open') ? 'hidden' : '';
+
+function openMenu() {
+  burger.classList.add('open');
+  navList.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  burger.classList.remove('open');
+  navList.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+burger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  navList.classList.contains('open') ? closeMenu() : openMenu();
 });
+
+// Close when a nav link is clicked
 navList.querySelectorAll('.nl').forEach(l => {
-  l.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navList.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  l.addEventListener('click', closeMenu);
 });
-document.addEventListener('click', e => {
-  if (!nav.contains(e.target)) {
-    burger.classList.remove('open');
-    navList.classList.remove('open');
-    document.body.style.overflow = '';
+
+// Close when clicking outside — but only after a short delay
+// so the burger click doesn't immediately re-close the menu
+document.addEventListener('click', (e) => {
+  if (navList.classList.contains('open') && !burger.contains(e.target) && !navList.contains(e.target)) {
+    closeMenu();
   }
 });
-burger.querySelector && (burger.addEventListener('click', e => e.stopPropagation()));
 
 /* ── PIPELINE PROGRESS ── */
 const stages = ['source','ingestion','processing','serving','analytics','terminal','contact'];

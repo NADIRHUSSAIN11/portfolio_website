@@ -14,12 +14,25 @@
   .pp-label{display:none;}
   .ph-connector{min-width:40px;}
   .nav-list{display:none;}
-  .burger{display:flex;}
+  .burger{display:flex;z-index:2000;position:relative;}
   .nav-list.open{
-    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;
-    position:fixed;inset:0;background:rgba(11,15,26,.98);z-index:999;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    width:100vw;height:100vh;
+    background:#08090d;
+    z-index:1999;
+    padding:2rem;
+    overflow:hidden;
   }
-  .nav-list.open .nl{font-size:1.4rem;}
+  .nav-list.open .nl{
+    font-size:1.5rem;
+    color:#e8eaf0;
+    letter-spacing:.05em;
+    position:relative;
+    z-index:2000;
+  }
+  .nav-list.open .nl:hover{color:#00e5ff;}
+  .nav-list.open .nav-api-btn{font-size:1.1rem;padding:.6rem 1.5rem;}
   .cur-dot,.cur-ring{display:none;}
   body{cursor:auto;}
 }

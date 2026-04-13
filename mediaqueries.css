@@ -1,81 +1,186 @@
-/* ══ TABLET ══ */
+/* ══════════════════════════════
+   GLOBAL — prevent any horizontal overflow
+══════════════════════════════ */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ══ TABLET (≤1200px) ══ */
 @media(max-width:1200px){
-  section{padding:5rem 6%;}
-  #hero{
-    grid-template-columns:1fr 1fr;
-    padding:7rem 6% 4rem;gap:3rem;
+  section { padding:5rem 6%; }
+
+  #hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 7rem 6% 4rem;
+    gap: 3rem;
   }
-  .hero-photo-col{align-items:center;}
-  .source-grid{grid-template-columns:1fr;gap:2.5rem;}
-  .projects-grid{grid-template-columns:repeat(2,1fr);}
-  .talks-grid{grid-template-columns:repeat(2,1fr);}
-  .api-grid{grid-template-columns:1fr;gap:2.5rem;}
-  .pipeline-progress{padding:.6rem 6%;}
-  .pp-label{display:none;}
-  .ph-connector{min-width:40px;}
-  .nav-list{display:none;}
-  .burger{display:flex;z-index:2000;position:relative;}
-  .nav-list.open{
-    display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;
-    position:fixed;top:0;left:0;right:0;bottom:0;
-    width:100vw;height:100vh;
+  .hero-photo-col { align-items:center; }
+  .source-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .projects-grid { grid-template-columns:repeat(2,1fr); }
+  .talks-grid { grid-template-columns:repeat(2,1fr); }
+  .api-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .pipeline-progress { padding:.6rem 6%; }
+  .pp-label { display:none; }
+  .ph-connector { min-width:30px; }
+  .nav-list { display:none; }
+  .burger { display:flex; z-index:2000; position:relative; }
+  .nav-list.open {
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    gap:2.5rem;
+    position:fixed; top:0; left:0; right:0; bottom:0;
+    width:100vw; height:100vh;
     background:#08090d;
     z-index:1999;
     padding:2rem;
     overflow:hidden;
   }
-  .nav-list.open .nl{
-    font-size:1.5rem;
-    color:#e8eaf0;
-    letter-spacing:.05em;
-    position:relative;
-    z-index:2000;
+  .nav-list.open .nl {
+    font-size:1.5rem; color:#e8eaf0;
+    letter-spacing:.05em; position:relative; z-index:2000;
   }
-  .nav-list.open .nl:hover{color:#00e5ff;}
-  .nav-list.open .nav-api-btn{font-size:1.1rem;padding:.6rem 1.5rem;}
-  .cur-dot,.cur-ring{display:none;}
-  body{cursor:auto;}
+  .nav-list.open .nl:hover { color:#00e5ff; }
+  .nav-list.open .nav-api-btn { font-size:1.1rem; padding:.6rem 1.5rem; }
+  .cur-dot, .cur-ring { display:none; }
+  body { cursor:auto; }
 }
 
-/* ══ MOBILE ══ */
+/* ══ MOBILE (≤768px) ══ */
 @media(max-width:768px){
-  section{padding:4rem 5%;}
-  .sec-title{font-size:1.75rem;}
-  #hero{
-    grid-template-columns:1fr;
-    padding:6rem 5% 3rem;text-align:center;
+  section { padding:4rem 5%; }
+  .sec-title { font-size:1.75rem; }
+
+  /* Hero */
+  #hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 5% 3rem;
+    text-align: center;
+    min-height: auto;
   }
-  .hero-photo-col{align-items:center;}
-  .hero-socials{justify-content:center;}
-  .hero-btns{justify-content:center;}
-  .hero-status-badge{display:inline-flex;}
-  .pipeline-horiz{padding:2rem 5% 1.25rem;}
-  .ph-connector{min-width:24px;}
-  .ph-label{font-size:.55rem;}
-  .projects-grid{grid-template-columns:1fr;}
-  .talks-grid{grid-template-columns:1fr;}
-  .talks-banner{flex-direction:column;gap:1rem;}
-  .tb-div{width:60px;height:1px;}
-  .ach-grid{justify-content:center;}
-  .footer-inner{flex-direction:column;text-align:center;}
-  .pipeline-progress{display:none;}
-  .hero-name{font-size:2.6rem;}
-  .hmc-row{grid-template-columns:1fr 1fr;}
+  .hero-photo-col { align-items:center; }
+  .hero-socials { justify-content:center; }
+  .hero-btns { justify-content:center; flex-wrap:wrap; }
+  .hero-status-badge { display:inline-flex; }
+  .hero-name { font-size:2.4rem; }
+  .hero-desc { font-size:.85rem; }
+  .hero-counters { gap:.5rem; padding:1rem; }
+  .hc-item { min-width:60px; }
+  .hc-num { font-size:1.4rem; }
+
+  /* Pipeline band */
+  .pipeline-band { overflow:hidden; max-width:100vw; }
+  .pipeline-horiz { padding:1.5rem 5% 1rem; }
+  .ph-inner {
+    display:flex; align-items:center;
+    justify-content:center;
+    overflow:hidden; width:100%; gap:0;
+  }
+  .ph-node { flex-shrink:0; }
+  .ph-dot { width:10px; height:10px; }
+  .ph-label { font-size:.5rem; letter-spacing:.06em; }
+  .ph-connector { flex:1; min-width:10px; max-width:40px; }
+  .ph-metrics {
+    flex-wrap:wrap; gap:.75rem;
+    font-size:.65rem; justify-content:center;
+  }
+
+  /* Code ticker */
+  .code-ticker-wrap { overflow:hidden; max-width:100vw; }
+  .code-ticker { animation-duration:30s; }
+  .ct-snippet { font-size:.65rem; }
+
+  /* Pipeline progress bar */
+  .pipeline-progress { display:none; }
+
+  /* About */
+  .source-grid { grid-template-columns:1fr; }
+  .src-metadata { font-size:.72rem; }
+  .meta-key { min-width:80px; font-size:.7rem; }
+  .meta-val { font-size:.7rem; }
+  .src-stats { flex-wrap:wrap; gap:.75rem; padding:1rem; }
+  .ss-num { font-size:1.3rem; }
+
+  /* Skills */
+  .sl-label { flex-wrap:wrap; gap:.5rem; }
+  .sl-tools { gap:.4rem; }
+  .tool-chip { font-size:.72rem; padding:.35rem .75rem; }
+
+  /* Projects */
+  .projects-grid { grid-template-columns:1fr; }
+  .proj-arch { font-size:.6rem; flex-wrap:wrap; gap:.2rem; }
+  .proj-body h3 { font-size:.82rem; }
+
+  /* Talks */
+  .talks-grid { grid-template-columns:1fr; }
+  .talks-banner { flex-direction:column; gap:1rem; padding:1.25rem; }
+  .tb-div { width:60px; height:1px; }
+  .tbs-num { font-size:1.5rem; }
+
+  /* Certs */
+  .cert-track-wrap { max-width:100vw; overflow:hidden; }
+  .cert-inner img { height:85px; }
+  .ach-grid { justify-content:center; flex-wrap:wrap; }
+  .ach-card { min-width:130px; max-width:160px; }
+
+  /* Terminal */
+  .terminal-window { max-width:100%; }
+  .term-body { padding:.75rem 1rem; font-size:.75rem; }
+  .term-input-row { padding:.6rem 1rem; }
+  .term-input { font-size:.75rem; }
+
+  /* Contact */
+  .api-grid { grid-template-columns:1fr; gap:2rem; }
+  .contact-right { overflow:hidden; }
+  .cl-row { font-size:.82rem; padding:.8rem 1rem; }
+  .af-field input, .af-field textarea { font-size:.8rem; }
+
+  /* Footer */
+  .footer-inner { flex-direction:column; text-align:center; gap:.75rem; }
+  .footer-copy { font-size:.68rem; word-break:break-word; }
 }
 
-/* ══ SMALL ══ */
+/* ══ SMALL (≤480px) ══ */
 @media(max-width:480px){
-  section{padding:3.5rem 4%;}
-  .hero-photo{width:200px;height:200px;}
-  .hero-photo-wrap{width:260px;height:260px;}
-  .ring-outer{width:260px;height:260px;}
-  .ring-inner{width:222px;height:222px;}
-  .hero-name{font-size:2.2rem;}
-  .hero-btns{flex-direction:column;align-items:center;}
-  .src-stats{gap:1rem;}
-  .cert-inner img{height:85px;}
-  .stack-layers{gap:2rem;}
-  .api-grid{gap:2rem;}
-  .hmc-row{grid-template-columns:1fr;}
-  .ph-inner{gap:0;overflow-x:auto;}
+  section { padding:3rem 4%; }
+
+  /* Hero photo */
+  .hero-photo { width:180px; height:180px; }
+  .hero-photo-wrap { width:240px; height:240px; }
+  .ring-outer { width:240px; height:240px; }
+  .ring-inner { width:204px; height:204px; }
+  .hero-name { font-size:2rem; }
+  .hero-title { font-size:.75rem; }
+  .hero-btns { flex-direction:column; align-items:center; width:100%; }
+  .btn-primary, .btn-ghost { width:100%; justify-content:center; }
+  .hero-counters { display:grid; grid-template-columns:1fr 1fr; gap:.5rem; }
+  .hc-item { min-width:unset; }
+
+  /* Pipeline nodes — hide labels on tiny screens */
+  .ph-label { display:none; }
+  .ph-dot { width:8px; height:8px; }
+  .ph-connector { min-width:8px; }
+
+  /* Skills */
+  .stack-layers { gap:1.5rem; }
+  .sl-name { font-size:.82rem; }
+
+  /* Source metadata */
+  .meta-row { flex-direction:column; gap:.1rem; }
+  .meta-key { min-width:unset; }
+
+  /* Certs */
+  .cert-inner img { height:72px; }
+  .ach-card { min-width:110px; padding:1rem .75rem; }
+  .ach-card img { width:70px; height:70px; }
+
+  /* Contact */
+  .cl-row { font-size:.75rem; }
+  .dl-row { font-size:.72rem; }
+  .param-row { font-size:.68rem; }
+  .api-url { font-size:.85rem; word-break:break-all; }
 }

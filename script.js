@@ -312,11 +312,11 @@ const cmds = {
     { text: 'DP-900 Data Fundamentals', color: 'var(--text2)' },
     { text: 'PL-900 Power Platform Fundamentals', color: 'var(--text2)' },
     { text: 'Databricks Certified Data Engineer Associate (95%)', color: 'var(--text2)' },
-    { text: 'ISC2 Certified in Cybersecurity (CC)', color: 'var(--text2)' },
     { text: '→ credly.com/users/nadir-hussain.3543f8a6/badges', color: 'var(--g)' },
   ],
   talks: () => [
     { text: '10+ talks delivered:', color: 'var(--acc)' },
+    { text: 'Learn Effortlessly — Microsoft Education campaign (2026)', color: 'var(--text2)' },
     { text: 'Azure Data Engineering — Microsoft & HEC (2024)', color: 'var(--text2)' },
     { text: 'Azure Data Factory Advanced — Microsoft & HEC (2024)', color: 'var(--text2)' },
     { text: 'Data Engineering Mastery — Tech Fest NED (Dec 2023)', color: 'var(--text2)' },

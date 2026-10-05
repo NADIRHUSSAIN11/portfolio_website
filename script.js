@@ -310,8 +310,6 @@ const cmds = {
     { text: 'DP-600 Fabric Analytics Engineer Associate', color: 'var(--text2)' },
     { text: 'AZ-900 Azure Fundamentals', color: 'var(--text2)' },
     { text: 'DP-900 Data Fundamentals', color: 'var(--text2)' },
-    { text: 'PL-900 Power Platform Fundamentals', color: 'var(--text2)' },
-    { text: 'Databricks Certified Data Engineer Associate (95%)', color: 'var(--text2)' },
     { text: '→ credly.com/users/nadir-hussain.3543f8a6/badges', color: 'var(--g)' },
   ],
   talks: () => [
